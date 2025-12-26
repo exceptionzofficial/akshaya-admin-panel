@@ -12,6 +12,7 @@ const Riders = () => {
     const [formData, setFormData] = useState({
         name: '',
         phone: '',
+        password: '',
         email: '',
         vehicleType: 'Bike',
         vehicleNumber: '',
@@ -50,8 +51,13 @@ const Riders = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!formData.name || !formData.phone) {
-            toast.error('Name and phone are required');
+        if (!formData.name || !formData.phone || !formData.password) {
+            toast.error('Name, phone, and password are required');
+            return;
+        }
+
+        if (formData.password.length < 6) {
+            toast.error('Password must be at least 6 characters');
             return;
         }
 
@@ -94,6 +100,7 @@ const Riders = () => {
         setFormData({
             name: '',
             phone: '',
+            password: '',
             email: '',
             vehicleType: 'Bike',
             vehicleNumber: '',
@@ -264,7 +271,18 @@ const Riders = () => {
                                     value={formData.phone}
                                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                                     style={styles.input}
-                                    placeholder="+91 98765 43210"
+                                    placeholder="9876543210"
+                                />
+                            </div>
+
+                            <div style={styles.formGroup}>
+                                <label style={styles.label}>Password *</label>
+                                <input
+                                    type="password"
+                                    value={formData.password}
+                                    onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                                    style={styles.input}
+                                    placeholder="Min 6 characters"
                                 />
                             </div>
 

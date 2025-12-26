@@ -10,6 +10,7 @@ import Riders from './pages/Riders';
 import MenuItems from './pages/MenuItems';
 import Analytics from './pages/Analytics';
 import Settings from './pages/Settings';
+import Users from './pages/Users';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/orders" element={<Orders />} />
         <Route path="/riders" element={<Riders />} />
+        <Route path="/users" element={<Users />} />
         <Route path="/menu-items" element={<MenuItems />} />
         <Route path="/analytics" element={<Analytics />} />
         <Route path="/settings" element={<Settings />} />

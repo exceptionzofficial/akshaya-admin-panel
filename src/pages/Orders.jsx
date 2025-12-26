@@ -187,9 +187,17 @@ const Orders = () => {
                                 <div style={styles.itemsLabel}>Items:</div>
                                 <div style={styles.itemsList}>
                                     {(order.items || []).map((item, idx) => (
-                                        <span key={idx} style={styles.itemTag}>
-                                            {item.name || item} {item.quantity ? `x${item.quantity}` : ''}
-                                        </span>
+                                        <div key={idx} style={{ marginBottom: '4px' }}>
+                                            <span style={styles.itemTag}>
+                                                {item.name || item} {item.quantity ? `x${item.quantity}` : ''}
+                                            </span>
+                                            {/* Show package contents if available */}
+                                            {item.items && Array.isArray(item.items) && (
+                                                <div style={{ paddingLeft: '8px', marginTop: '4px', fontSize: '11px', color: '#95A5A6' }}>
+                                                    Package includes: {item.items.map(sub => sub.name).join(', ')}
+                                                </div>
+                                            )}
+                                        </div>
                                     ))}
                                 </div>
                             </div>

@@ -7,7 +7,8 @@ import {
     MdAnalytics,
     MdShoppingCart,
     MdLogout,
-    MdSettings
+    MdSettings,
+    MdPeople
 } from 'react-icons/md';
 import logo from '../../assets/logo.png';
 
@@ -18,6 +19,7 @@ const Sidebar = () => {
         { path: '/', icon: MdDashboard, label: 'Dashboard' },
         { path: '/orders', icon: MdShoppingCart, label: 'Orders' },
         { path: '/riders', icon: MdDeliveryDining, label: 'Riders' },
+        { path: '/users', icon: MdPeople, label: 'Users' },
         { path: '/menu-items', icon: MdRestaurantMenu, label: 'Menu Items' },
         { path: '/analytics', icon: MdAnalytics, label: 'Analytics' },
     ];

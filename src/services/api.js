@@ -1,12 +1,13 @@
 import axios from 'axios';
 
-// Vite uses import.meta.env instead of process.env
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000/api';
+// Use ngrok URL to ensure same backend as mobile app
+const API_URL = 'https://testing-backend-akshaya.vercel.app/api';
 
 const api = axios.create({
   baseURL: API_URL,
   headers: {
     'Content-Type': 'application/json',
+    'ngrok-skip-browser-warning': 'true', // Skip ngrok warning page
   },
 });
 
@@ -173,6 +174,26 @@ export const ridersAPI = {
   },
   delete: async (id) => {
     const response = await api.delete(`/riders/${id}`);
+    return response.data;
+  },
+};
+
+// Users API
+export const usersAPI = {
+  getAll: async () => {
+    const response = await api.get('/users');
+    return response.data;
+  },
+  getStats: async () => {
+    const response = await api.get('/users/stats');
+    return response.data;
+  },
+  getByPhone: async (phone) => {
+    const response = await api.get(`/users/${phone}`);
+    return response.data;
+  },
+  updateStatus: async (phone, isActive) => {
+    const response = await api.patch(`/users/${phone}/status`, { isActive });
     return response.data;
   },
 };
