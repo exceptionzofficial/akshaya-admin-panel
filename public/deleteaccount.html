@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Account - Satvamirtham</title>
+    <style>
+        :root {
+            --primary-color: #2D7A4F;
+            --danger-color: #e74c3c;
+            --secondary-color: #2C3E50;
+            --text-color: #444;
+            --bg-color: #f9f9f9;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 90vh;
+        }
+        .container {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            width: 100%;
+        }
+        header {
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+        .warning-box {
+            background-color: #fff5f5;
+            border: 1px solid #feb2b2;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        .warning-title {
+            color: var(--danger-color);
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .instruction {
+            margin-bottom: 25px;
+            font-size: 1.1em;
+        }
+        .delete-btn {
+            display: inline-block;
+            background-color: var(--danger-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 4px 6px rgba(231, 76, 60, 0.2);
+        }
+        .delete-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+        .delete-btn:active {
+            transform: translateY(0);
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Delete Account Request</h1>
+            <p>We're sorry to see you go.</p>
+        </header>
+
+        <div class="warning-box">
+            <div class="warning-title">
+                ⚠️ Important Notice
+            </div>
+            <p>Deleting your account will result in:</p>
+            <ul>
+                <li>Permanent removal of your profile and order history.</li>
+                <li>Loss of any active loyalty points or rewards.</li>
+                <li>Removal of your saved addresses and preferences.</li>
+            </ul>
+            <p>This action cannot be undone.</p>
+        </div>
+
+        <p class="instruction">
+            To proceed with your account deletion, click the button below. It will open your email app with a pre-filled template. <strong>Please ensure you include the mobile number associated with your account in the email.</strong>
+        </p>
+
+        <a href="mailto:akshyaoffice979@gmail.com?subject=Account%20Deletion%20Request%20-%20Satvamirtham&body=I%20would%20like%20to%20request%20the%20permanent%20deletion%20of%20my%20Satvamirtham%20account.%0D%0A%0D%0AMobile%20Number%3A%20%5BENTER%20YOUR%20MOBILE%20NUMBER%20HERE%5D%0D%0A%0D%0AReason%20for%20deletion%20(optional)%3A%20" class="delete-btn">
+            Delete My Account
+        </a>
+
+        <div class="footer">
+            <p>If you have any questions, contact us at akshyaoffice979@gmail.com</p>
+            <p>&copy; 2026 Satvamirtham. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
